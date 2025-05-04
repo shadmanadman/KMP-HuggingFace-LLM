@@ -20,6 +20,10 @@ fun Application.module() {
         }
 
 
+        /**
+         *  If you use the script way other ways you can use ktor client
+         *  to make a request to fast api
+         */
         post("/summarize") {
             val textToSummarize = call.parameters["text"] ?: DefualtText
             val process = ProcessBuilder("../.venv/bin/python3", "../mlgate/main.py", textToSummarize)
